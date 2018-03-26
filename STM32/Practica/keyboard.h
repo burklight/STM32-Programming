@@ -1,0 +1,9 @@
+void initKeyboard(void);
+void GPIO_ModeOpenDrain(void);
+int32_t readKeyboard(void);
+void intConfigKeyboard(void);
+void writeKeyboard(void);
+void polling(void);
+int32_t readMultikey(void);
+void writeMultikey(void);
+void calculator(void);

@@ -1,0 +1,20 @@
+void initKeyboard(){
+for(int32_t i = 0;i<4;i++){
+GPIO_ModePushPull(&GPIOD,i);
+GPIO_ModeOpenDrain(&GPIOD,i+4);
+}
+
+
+
+
+GPIO_ModeOpenDrain(GPIO_TypeDef *port, int32_t linia)
+{
+*port->MODER |=BIT(2*linia);
+*port->MODER &= (~BIT(2*linia+1));
+(*port->BSRR.H.clear) = BIT(linia);
+*port->OTYPER |= BIT(linia);
+*port->OSPEEDR &= (~BIT(2*linia));
+*port->OSPEEDR &= (~BIT(2*linia+1));
+*port->PUPDR &= (~BIT(2*linia));
+*port->PUPDR &= (~BIT(2*linia+1));
+}

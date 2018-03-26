@@ -1,0 +1,16 @@
+int main(void)
+ {
+ // Basic initializations
+ uint8_t data1[8] = {0,0,6,101,2,1,0,0};
+ baseInit();
+ LCD_Init();
+ LCD_CustomChar(0,data1);
+ uint8_t data2[8] = {0,0,12,20,8,16,0,0};
+ LCD_CustomChar(1,data2);
+ LCD_SendString("    We ");
+ LCD_SendChar(0x00);
+ LCD_SendChar(0x01);
+ LCD_GotoXY(4,1);
+ LCD_SendString("SEBM");
+ while(1);
+ }

@@ -1,0 +1,4 @@
+Directorio de trabajo para las prácticas de SBM/SEBM
+Este directorio tiene que colgar directamente de L:
+No lo cambieis de sitio
+
